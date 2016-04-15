@@ -1,13 +1,16 @@
 
 #Labs
 
-##Service Bus Labs:
+##Docker
+https://github.com/msdevno/docker-on-azure-hol/
+
+##Service Bus
 https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-queues/
 https://azure.microsoft.com/en-us/documentation/articles/service-bus-brokered-tutorial-dotnet/
 https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 https://azure.microsoft.com/en-us/documentation/articles/service-bus-dotnet-how-to-use-relay/
 
-##Service Fabric Labs:
+##Service Fabric
 https://azure.microsoft.com/en-us/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/
 https://azure.microsoft.com/en-us/documentation/articles/service-fabric-reliable-services-communication-webapi/
 https://azure.microsoft.com/en-us/documentation/articles/service-fabric-deploy-existing-app/
