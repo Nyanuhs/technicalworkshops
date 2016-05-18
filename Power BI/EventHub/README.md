@@ -30,7 +30,7 @@ Your Event Hub is now created, and you have the connection strings you need to s
 
 ## Run data generator application
 
-Download the [ZIP file](./EventHubDataGenerator.zip) with the binaries for the data generator. Run it and use the SendRule connection string as input for sending data.
+Download the [ZIP file](https://github.com/msdevno/technicalworkshops/raw/master/Power%20BI/EventHub/EventHubDataGenerator.zip) with the binaries for the data generator. Run it and use the SendRule connection string as input for sending data.
 Continue hooking up the Stream Analytics job and Power BI from [here](https://azure.microsoft.com/en-us/documentation/articles/stream-analytics-power-bi-dashboard/).
 
 If you're interested in the source for the data generator, have a look [here](https://gist.github.com/einari/4a6e53eca299f203ca7a3044a5d25cd0).
