@@ -78,3 +78,15 @@ Concretely, run the [IVisual Tutorial](https://github.com/Microsoft/PowerBI-visu
 [Embed Power BI into your app](https://azure.microsoft.com/en-us/documentation/articles/power-bi-embedded-iframe/)
 
 [Implement Power BI Embedded RLS](https://azure.microsoft.com/en-us/documentation/articles/power-bi-embedded-rls/)
+
+## Links to tutorial in Synoptic Panels
+
+[Bumper](http://bit.ly/1YCrsRh)
+
+[Motorcycle](http://bit.ly/1TZ3paL)
+
+[Over heat](http://bit.ly/23Xjaos)
+
+[Roof](http://bit.ly/1WCVSFM)
+
+[Car](http://bit.ly/1ss1XaN)
