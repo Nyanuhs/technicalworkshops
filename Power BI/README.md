@@ -24,7 +24,7 @@ As a follow-up to the labs below and you have big-data scenarios, you should hav
 
 ## Streaming with Stream Analytics
 
-#Anders recommends this for near realtime streaming for Device to Cloud to Power BI:
+###Anders recommends this for near realtime streaming for Device to Cloud to Power BI:
 
 [Step 1: Creating the IoT Hub](https://azure.microsoft.com/en-us/documentation/articles/iot-hub-csharp-csharp-getstarted/#create-an-iot-hub)
 
@@ -55,7 +55,7 @@ APIs can be tested on [codit](https://coditapi.portal.azure-api.net/docs/service
 
 ## Visuals
 
-#Anders recommends: [Power BI Visual Tools (pbiviz)](https://github.com/Microsoft/PowerBI-visuals-tools)
+###Anders recommends: [Power BI Visual Tools (pbiviz)](https://github.com/Microsoft/PowerBI-visuals-tools)
 
 and: [Synoptic Panel Custom Visual Tutorial](http://radacad.com/custom-visuals-in-power-bi-build-whatever-you-want)
 
