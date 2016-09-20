@@ -25,13 +25,19 @@ As a follow-up to the labs below and you have big-data scenarios, you should hav
 ## Streaming with Stream Analytics
 
 Anders recommends this for near realtime streaming for Device to Cloud to Power BI:
+
 [Step 1: Creating the IoT Hub](https://azure.microsoft.com/en-us/documentation/articles/iot-hub-csharp-csharp-getstarted/#create-an-iot-hub)
+
 [Step 2: Downloading the IoT Hub Device Explorer and creating a Device ID](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md#getting-device-explorer)
+
 [Step 3: Creating the simulator](https://azure.microsoft.com/en-us/documentation/articles/iot-hub-csharp-csharp-getstarted/#create-a-simulated-device-app)
+
 [Step 4: Creating and configuring Stream analytics to Power BI](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/03/20/consuming-data-on-microsoft-azure-iot-hub-into-microsoft-power-bi/)
 
 
+
 This is a two part lab. First start off by getting an EventHub up and running and some realtime data pushed to it:
+
 [Setting up EventHub and pushing data to it](https://github.com/msdevno/technicalworkshops/blob/master/Power%20BI/EventHub/README.md)
 
 Then, go and create a Stream Analytics job that you connect to Power BI:
@@ -49,7 +55,8 @@ APIs can be tested on [codit](https://coditapi.portal.azure-api.net/docs/service
 
 ## Visuals
 
-Anders recommends:[Power BI Visual Tools (pbiviz)](https://github.com/Microsoft/PowerBI-visuals-tools)
+Anders recommends: [Power BI Visual Tools (pbiviz)](https://github.com/Microsoft/PowerBI-visuals-tools)
+
 and: [Synoptic Panel Custom Visual Tutorial](http://radacad.com/custom-visuals-in-power-bi-build-whatever-you-want)
 
 [Visual Studio Extension](https://github.com/Microsoft/PowerBI-visuals/wiki/Create-new-Power-BI-Visuals-using-template)
