@@ -6,7 +6,7 @@ Find your pass [here](https://gist.github.com/einari/1f514940ad8578b94bbc9752664
 #Labs
 
 ##Docker
-We will be using labs from [here](https://github.com/msdevno/docker-on-azure-hol/)
+Using labs from [here](https://github.com/msdevno/docker-on-azure-hol/)
 
 
 [Creating a Docker host in Azure](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise02/01-machine)
