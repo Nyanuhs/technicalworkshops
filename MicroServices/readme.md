@@ -6,7 +6,14 @@ Find your pass [here](https://gist.github.com/einari/1f514940ad8578b94bbc9752664
 #Labs
 
 ##Docker
-https://github.com/msdevno/docker-on-azure-hol/
+We will be using labs from [here](https://github.com/msdevno/docker-on-azure-hol/)
+
+[Creating a Docker host in Azure](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise02/01-machine)
+[Working with containers in Azure](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise02/04-azure-container)
+[Containers](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise03/01-containers)
+[Images](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise03/02-images)
+[Dockerfile](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise03/03-dockerfile)
+[Setting up your own registry](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise04)
 
 ##Service Fabric
 https://azure.microsoft.com/en-us/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/
