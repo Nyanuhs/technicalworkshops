@@ -8,7 +8,7 @@ Find your pass [here](https://gist.github.com/einari/1f514940ad8578b94bbc9752664
 ##Docker
 Using labs from [here](https://github.com/msdevno/docker-on-azure-hol/)
 
-Use the Windows 10 Ubuntu bash - icon: ![Ubuntu](ubuntu.png)
+Use the Windows 10 Ubuntu bash - icon on the taskbar: ![Ubuntu](ubuntu.png)
 
 [Creating a Docker host in Azure](https://github.com/msdevno/docker-on-azure-hol/tree/master/exercise02/01-machine)
 
