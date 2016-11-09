@@ -1,6 +1,7 @@
 
-Passes:
-https://gist.github.com/einari/1f514940ad8578b94bbc9752664a2eac
+#Passes:
+Activate through : http://www.microsoftazurepass.com
+Find your pass [here](https://gist.github.com/einari/1f514940ad8578b94bbc9752664a2eac)
 
 #Labs
 
