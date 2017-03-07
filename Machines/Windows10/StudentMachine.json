@@ -1,0 +1,178 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type": "string",
+            "defaultValue": "West Europe",
+            "allowedValues": [
+                "West Europe",
+                "North Europe"
+            ],
+            "metadata": {
+                "description": "Location to create the VM in"
+            }
+        },
+        "numberOfInstances": {
+            "type": "int",
+            "defaultValue": "15",
+            "metadata": {
+                "description": "Number of students"
+            }
+        },
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "Standard_D2",
+            "allowedValues": [
+                "Standard_A0",
+                "Standard_A1",
+                "Standard_A2",
+                "Standard_A3",
+                "Standard_A4",
+                "Standard_D0",
+                "Standard_D1",
+                "Standard_D2",
+                "Standard_D3",
+                "Standard_D4"
+            ],
+            "metadata": {
+                "description": "VM Size"
+            }
+        },
+        "namePrefix": {
+            "type": "string",
+            "metadata": {
+                "description": "Prefix for naming all the resources in the resource group"
+            }
+        }
+    },
+    "variables": {
+        "api-version": "2015-06-15",
+        "osType": "Windows",
+        "addressPrefix": "10.0.0.0/16",
+        "subnetName": "Subnet",
+        "subnetPrefix": "10.0.0.0/24",
+        "publicIPAddressName": "[concat(parameters('namePrefix'),'PublicIP')]",
+        "publicIPAddressType": "Dynamic",
+        "virtualNetworkName": "[concat(parameters('namePrefix'),'VNet')]",
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+        "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
+        "nicName": "[concat(parameters('namePrefix'),'Nic')]",
+        "storageAccountName": "msstudent",
+        "storageAccountContainerName": "vhds",
+        "sourceImageName": "student201623113283.vhd",
+        "OSDiskName": "osdisk",
+        "adminUsername": "student",
+        "adminPassword": "1234Abcd!efg"
+    },
+    "resources": [
+        {
+            "apiVersion": "[variables('api-version')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('virtualNetworkName')]",
+            "location": "[parameters('location')]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[variables('addressPrefix')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[variables('subnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('subnetPrefix')]"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "[variables('api-version')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('nicName'),copyIndex())]",
+            "location": "[parameters('location')]",
+            "copy": {
+                "name": "nicLoop",
+                "count": "[parameters('numberOfInstances')]"
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'), copyIndex())]",
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', concat(variables('publicIPAddressName'), copyIndex()))]"
+                            },
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "[variables('api-version')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "name": "[concat(variables('publicIPAddressName'), copyIndex())]",
+            "location": "[parameters('location')]",
+            "copy": {
+                "name": "ipLoop",
+                "count": "[parameters('numberOfInstances')]"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+            }
+        },
+        {
+            "apiVersion": "[variables('api-version')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[concat(parameters('namePrefix'), copyIndex())]",
+            "location": "[parameters('location')]",
+            "copy": {
+                "name": "vmLoop",
+                "count": "[parameters('numberOfInstances')]"
+            },
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'), copyIndex())]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "osProfile": {
+                    "computerName": "[concat(parameters('namePrefix'), copyIndex())]",
+                    "adminUsername": "[variables('adminUsername')]",
+                    "adminPassword": "[variables('adminPassword')]"
+                },
+                "storageProfile": {
+                    "osDisk": {
+                        "name": "[concat(concat(parameters('namePrefix'), copyIndex()),'-osDisk')]",
+                        "osType": "[variables('osType')]",
+                        "caching": "ReadWrite",
+                        "createOption": "FromImage",
+                        "image": {
+                            "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/',variables('storageAccountContainerName'),'/',variables('sourceImageName'))]"
+                        },
+                        "vhd": {
+                            "uri": "[concat('http://',variables('storageAccountName'),'.blob.core.windows.net/',variables('storageAccountContainerName'),'/',parameters('namePrefix'),'.',variables('OSDiskName'),copyIndex(),'.vhd')]"
+                        }
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nicName'),copyIndex()))]"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
