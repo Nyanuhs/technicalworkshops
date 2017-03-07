@@ -1,6 +1,6 @@
 # Windows 10 - Virtual Machine
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgist.githubusercontent.com%2Feinari%2F9bc5d1e9c2956050975a12eeb03fbbad%2Fraw%2Fa1cfbdc632e73a52d2695207545501c247c224c9%2FStudentMachine.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmsdevno%2Ftechnicalworkshops%2Fmaster%2FMachines%2FWindows10%2FStudentMachine.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
