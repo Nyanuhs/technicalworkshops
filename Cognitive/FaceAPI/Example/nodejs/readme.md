@@ -27,7 +27,12 @@ from CLI by running:
 node main.js
 ```
 
-Then you can navigate your browser to [http://localhost:3000](http://localhost:3000)
+Then you can navigate your browser to [http://localhost:3000](http://localhost:3000).
+Your browser need to support the `<video/>` tag - see if your browser supports it [here](http://caniuse.com/#search=video).
+
+Once you've clicked the capture button, you should see something like below:
+
+![Einars Stats](images/browser_result.png)
 
 
 ## Azure
