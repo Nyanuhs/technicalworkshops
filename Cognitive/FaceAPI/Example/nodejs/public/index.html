@@ -2,29 +2,54 @@
 <html>
 
 <head>
+    <title>Azure Cognitive Services - Face API example</title>
     <script src="photoCapture.js" type="text/javascript"></script>
 </head>
 
-
 <body>
-
     <div>
         <video id="video"></video>
+        <br>
         <button id="captureButton">Capture</button>
     </div>
 
-
     <canvas id="canvas"></canvas>
 
+    <table id="resultTable">
+    </table>
 
     <script>
-        new photoCapture("video","canvas", "captureButton", function(result) {
-            debugger;
-        });
+        (function () {
+            var resultTable = document.getElementById("resultTable");
 
+            function addResultRow(label, value) {
+                var row = document.createElement("tr");
+                var labelColumn = document.createElement("td");
+                labelColumn.innerText = label;
+                row.appendChild(labelColumn);
+
+                var valueColumn = document.createElement("td");
+                valueColumn.innerText = value;
+                row.appendChild(valueColumn);
+
+                resultTable.appendChild(row);
+            }
+
+            function addPropertiesFor(prefix, object) {
+                for( var property in object ) {
+                    if( typeof object[property] == "object" ) {
+                        addPropertiesFor(property+":", object[property]);
+                    } else {
+                        addResultRow(prefix+property, object[property]);
+                    }
+                }
+            }
+
+            new photoCapture("video", "canvas", "captureButton", function (result) {
+                addPropertiesFor("", result.faceAttributes);
+            });
+        })();
     </script>
-
-
 </body>
 
 </html>
