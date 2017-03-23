@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="photoCapture.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+    <div>
+        <video id="video"></video>
+        <button id="captureButton">Capture</button>
+    </div>
+
+
+    <canvas id="canvas"></canvas>
+
+
+    <script>
+        new photoCapture("video","canvas", "captureButton", function(result) {
+            debugger;
+        });
+
+    </script>
+
+
+</body>
+
+</html>
