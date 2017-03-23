@@ -1,6 +1,7 @@
 # Getting started
 
-You need to restore all node modules
+This example is written for [NodeJS](http://nodejs.org/).
+You need to restore all node modules.
 
 ```cli
 npm install
