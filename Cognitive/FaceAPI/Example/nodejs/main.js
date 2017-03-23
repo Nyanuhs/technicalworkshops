@@ -25,9 +25,8 @@ app.post("/photo", (req,res) => {
     });
 });
 
-
 app.use(express.static("public"));
 
 app.listen(3000, () => {
-    console.log("Hello world from the server");
+    console.log("Server is running on port 3000");
 });
