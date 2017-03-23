@@ -46,6 +46,9 @@
             }
 
             new photoCapture("video", "canvas", "captureButton", function (result) {
+                while( resultTable.lastChild ) {
+                    resultTable.removeChild(resultTable.lastChild);
+                }
                 addPropertiesFor("", result.faceAttributes);
             });
         })();
